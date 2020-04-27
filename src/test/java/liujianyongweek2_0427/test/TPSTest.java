@@ -24,10 +24,12 @@ public class TPSTest {
 		
 
 		for (int i = 1; i <=100; i++) {
-			TPS tps = new TPS(BigInteger.valueOf(i), ZHStringUtil.getZHName(), RandomUtil.random(1, 100),
-					BigDecimal.valueOf(RandNumUtil.getValue(30000.0, 80000.0, 2))
-				, DateUtil.random(parse,new Date()));
-			System.out.println(tps);
+			TPS tps = new TPS(BigInteger.valueOf(i), //id从1开始递增
+					ZHStringUtil.getZHName(), //姓名属性值调用ZHStringUtil的getZHName()
+					RandomUtil.random(1, 100),//年龄属性值调用RandomUtil.random()创建，必须在1-100岁之间
+					BigDecimal.valueOf(RandNumUtil.getValue(30000.0, 80000.0, 2)), //薪酬是3万到8万，小数点后2位的随机数
+					DateUtil.random(parse,new Date()));//聘用日期属性值模拟2012年1月1日至今任意随机时间
+			System.out.println(tps);//循环打印对象
 		}
 	}
 }
